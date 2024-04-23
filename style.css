@@ -1,0 +1,17 @@
+body{
+    font: normal 14pt Arial;
+    background-color: rgb(44, 170, 134);
+}
+section{
+    background-color: rgb(255, 255, 255);
+    width: 800px; /*Largura*/
+    border-radius: 20px; /*Borda*/
+    margin: auto; /*Centraliza no meio*/
+    padding: 20px; /*Para o texto descolar da borda*/
+}
+h1, footer{
+    text-align: center;
+}
+input{
+    font: normal 14pts  Arial;
+}
