@@ -1,0 +1,23 @@
+body{
+    font: normal 14pt Arial;
+    background-color: rgb(5, 136, 129);
+}
+section{
+    background-color: rgb(255, 255, 255);
+    width: 800px; /*Largura*/
+    height: 530px;
+    border-radius: 20px; /*Borda*/
+    margin: auto; /*Centraliza no meio*/
+    padding: 20px; /*Para o texto descolar da borda*/
+}
+h1, footer{
+    text-align: center;
+}
+input, button {
+    margin: 10px;
+    padding: 5px;
+}
+
+input{
+    font: normal 14pts  Arial;
+}
