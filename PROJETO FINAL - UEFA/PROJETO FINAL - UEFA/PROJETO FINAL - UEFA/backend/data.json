@@ -1,0 +1,34 @@
+{
+  "matches": [
+    {
+      "date": "2023-06-01",
+      "time": "18:00",
+      "location": "Estádio A",
+      "home_team": "Time A",
+      "away_team": "Time B",
+      "result": "2-1"
+    },
+    {
+      "date": "2023-06-02",
+      "time": "20:00",
+      "location": "Estádio B",
+      "home_team": "Time C",
+      "away_team": "Time D",
+      "result": "1-1"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Time A"
+    },
+    {
+      "name": "Time B"
+    },
+    {
+      "name": "Time C"
+    },
+    {
+      "name": "Time D"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons8-uefa-champions-16 (1).png" type="UEFA icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>UEFA Champions League</title>
+    <style>
+        body { 
+            background-color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: #10025f;
+            color: #fff;
+            padding: 20px 0;
+        }
+        header h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        header h2 {
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .section {
+            padding: 40px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 3px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .carousel {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 200px; /* Ajuste a largura máxima conforme necessário */
+    max-height: 200px; /* Ajuste a altura máxima conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+    </style>
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-item');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Optionally, auto-slide every 5 seconds
+        setInterval(nextSlide, 2000);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Liga dos Campeões da UEFA 2023</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="partidas.html">Partidas</a></li>
+                    <li><a href="times.html">Times</a></li>
+                    <li><a href="transmissao.html">Transmissão Ao Vivo</a></li>
+                    <li><a href="ingressos.html">Ingressos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</head>
+<body>
+    <section id="teams" class="section">
+        <div class="container">
+            <h2>Times</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Arsenal_FC.svg.png" alt="Arsenal">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Manchester_City_Football_Club.png" alt="Manchester City">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Barcelona.png" alt="Barcelona">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="AtleticoMadrid.png" alt="Atletico Madrid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Logo_PSG.png" alt="PSG">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Real_Madrid.png" alt="Real Madrid">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="FC_Bayern_München.png" alt="Bayern">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Borussia_Dortmund.png" alt="Borussia">
+                    </div>
+                </div>
+                <button class="carousel-control prev"onclick="prevMatch()">&#10094</button>
+                <button class="carousel-control next" onclick="nextMatch()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+</body>
+</html>

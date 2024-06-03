@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons8-uefa-champions-16 (1).png" type="UEFA icon">
+    <link rel="stylesheet" href="styles.css">
+    <title>UEFA Champions League</title>
+    <style>
+        body { 
+            background-color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #10025f;
+            color: #fff;
+            padding: 20px 0;
+        }
+        header h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        header h2 {
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .section {
+            padding: 40px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 3px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            text-align: center;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.8s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+    <script>
+        let currentMatchSlide = 0;
+    
+        function showMatchSlide(index) {
+            const slides = document.querySelectorAll('#matches .carousel-item');
+            if (index >= slides.length) {
+                currentMatchSlide = 0;
+            } else if (index < 0) {
+                currentMatchSlide = slides.length - 1;
+            } else {
+                currentMatchSlide = index;
+            }
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentMatchSlide) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    
+        function nextMatch() {
+            showMatchSlide(currentMatchSlide + 1);
+        }
+    
+        function prevMatch() {
+            showMatchSlide(currentMatchSlide - 1);
+        }
+    
+        // Optionally, auto-slide every 8 seconds
+        setInterval(nextMatch, 8000);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Liga dos Campeões da UEFA 2023</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="partidas.html">Partidas</a></li>
+                    <li><a href="times.html">Times</a></li>
+                    <li><a href="transmissao.html">Transmissão Ao Vivo</a></li>
+                    <li><a href="ingressos.html">Ingressos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="matches" class="section">
+            <div class="container">
+                <h2>Partidas</h2>
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <table id="matchesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Local</th>
+                                        <th>Times</th>
+                                        <th>Resultado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>9 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>Santiago Bernabéu, Madrid, Espanha</td>
+                                        <td>Real Madrid vs. Manchester City</td>
+                                        <td>Real Madrid 1 - 1 Manchester City</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>San Siro, Milão, Itália</td>
+                                        <td>Inter de Milão vs. Liverpool</td>
+                                        <td>Inter de Milão 2 - 0 Liverpool</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="carousel-item">
+                            <table id="matchesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Local</th>
+                                        <th>Times</th>
+                                        <th>Resultado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>16 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>Etihad Stadium, Manchester, Inglaterra</td>
+                                        <td>Manchester City vs. Real Madrid</td>
+                                        <td>A definir</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>Anfield, Liverpool, Inglaterra</td>
+                                        <td>Liverpool vs. Inter de Milão</td>
+                                        <td>A definir</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="carousel-item">
+                            <table id="matchesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Local</th>
+                                        <th>Times</th>
+                                        <th>Resultado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>23 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>Old Trafford, Manchester, Inglaterra</td>
+                                        <td>Manchester United vs. Barcelona</td>
+                                        <td>A definir</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24 de Maio de 2024</td>
+                                        <td>21:00 (CET)</td>
+                                        <td>Allianz Arena, Munique, Alemanha</td>
+                                        <td>Bayern de Munique vs. Juventus</td>
+                                        <td>A definir</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev" onclick="prevMatch()">&#10094;</button>
+                    <button class="carousel-control next" onclick="nextMatch()">&#10095;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
